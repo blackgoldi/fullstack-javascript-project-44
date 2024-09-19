@@ -14,5 +14,7 @@
     "code": "bin/brain-games.js"
   },
   "keywords": [],
-  "devDependencies": {}
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
