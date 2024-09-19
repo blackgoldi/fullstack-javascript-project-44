@@ -7,4 +7,6 @@ brain-games:
 	node src/cli.js
 publish:
 	npm publish --dry-run
+lint:
+	npx eslint .
 	
