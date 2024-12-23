@@ -8,10 +8,11 @@
     "make": "gnumake"
   },
   "type": "module",
-  "author": "",
+  "author": "BlackGoldik",
   "license": "ISC",
   "bin": {
-    "code": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
   },
   "keywords": [],
   "dependencies": {
@@ -21,5 +22,13 @@
     "@eslint/js": "^9.10.0",
     "eslint": "^9.10.0",
     "globals": "^15.9.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackgoldi/fullstack-javascript-project-44.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blackgoldi/fullstack-javascript-project-44/issues"
+  },
+  "homepage": "https://github.com/blackgoldi/fullstack-javascript-project-44#readme"
 }
