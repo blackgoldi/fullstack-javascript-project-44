@@ -1,4 +1,5 @@
-import { getRand } from '../src/cli.js';
+#!/usr/bin/env node
+import { getRand, helloGuest } from '../src/cli.js';
 import checker from '../src/index.js';
 
 function gcd(a, b) {
@@ -7,7 +8,7 @@ function gcd(a, b) {
   }
   return gcd(b % a, a);
 }
-
+helloGuest();
 console.log('Find the greatest common divisor of given numbers.');
 checker(
   () => {

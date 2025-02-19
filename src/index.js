@@ -1,6 +1,3 @@
-/* eslint-disable eqeqeq */
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-unused-vars */
 import readlineSync from 'readline-sync';
 import { name } from './cli.js';
 

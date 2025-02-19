@@ -1,6 +1,8 @@
-import { getRand } from '../src/cli.js';
+#!/usr/bin/env node
+import { getRand, helloGuest } from '../src/cli.js';
 import checker from '../src/index.js';
 
+helloGuest();
 console.log('What number is missing in the progression?');
 checker(
   () => {

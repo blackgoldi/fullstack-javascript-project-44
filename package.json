@@ -15,15 +15,16 @@
     "brain-even": "bin/brain-even.js",
     "brain-calc": "bin/brain-calc.js",
     "brain-gcd": "bin/brain-gcd.js",
+    "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime.js"
   },
   "keywords": [],
   "dependencies": {
-    "readline-sync": "^1.4.10",
-    "globals": "^15.15.0",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.20.0",
-    "eslint": "^8.57.1"
+    "eslint": "^8.57.1",
+    "globals": "^15.15.0",
+    "readline-sync": "^1.4.10"
   },
   "lint-staged": {
     "*.js": "eslint --fix"

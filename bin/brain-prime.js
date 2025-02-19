@@ -1,6 +1,8 @@
-import { getRand } from '../src/cli.js';
+#!/usr/bin/env node
+import { getRand, helloGuest } from '../src/cli.js';
 import checker from '../src/index.js';
 
+helloGuest();
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 checker(
   () => getRand(),
