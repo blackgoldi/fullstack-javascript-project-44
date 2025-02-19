@@ -12,13 +12,13 @@ checker(
     for (let i = 1; i < 10; i += 1) {
       array[i] = array[i - 1] + plus;
     }
-    array[getRand()] = '...';
+    array[getRand()] = '..';
     const toStr = array.join(' ');
     return toStr.toString();
   },
   (expression) => {
     const mass = Array.from(expression.split(' '));
-    const index = mass.findIndex((item) => item === '...');
+    const index = mass.findIndex((item) => item === '..');
     return Number(mass[index - 1]) - Number(mass[index - 2]) + Number(mass[index - 1]);
   },
 );
