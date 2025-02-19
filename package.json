@@ -10,7 +10,7 @@
   "type": "module",
   "author": "BlackGoldik",
   "license": "ISC",
-  "bin": {
+  "games": {
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",
     "brain-calc": "bin/brain-calc.js",
