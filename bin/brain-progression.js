@@ -9,8 +9,8 @@ checker(
   name,
   () => {
     const array = [];
-    array[0] = getRandomInRange(0, 10);
-    const plus = getRandomInRange(0, 10);
+    array[0] = getRandomInRange(1, 10);
+    const plus = getRandomInRange(1, 10);
     for (let i = 1; i < 10; i += 1) {
       array[i] = array[i - 1] + plus;
     }
