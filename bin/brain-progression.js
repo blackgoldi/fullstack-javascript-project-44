@@ -14,7 +14,7 @@ checker(
     for (let i = 1; i < 10; i += 1) {
       array[i] = array[i - 1] + plus;
     }
-    array[getRandomInRange()] = '..';
+    array[getRandomInRange(0, 10)] = '..';
     const toStr = array.join(' ');
     return toStr.toString();
   },
