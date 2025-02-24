@@ -1,14 +1,9 @@
 import readlineSync from 'readline-sync';
 
 // eslint-disable-next-line import/no-mutable-exports
-let name = '';
-function helloGuest() {
+export default function makeWelcome() {
   console.log('Welcome to the Brain Games!');
-  name = readlineSync.question('May I have your name? ');
+  const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}`);
+  return name;
 }
-
-function getRand() {
-  return Math.round(Math.random() * 10);
-}
-export { name, helloGuest, getRand };

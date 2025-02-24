@@ -1,18 +1,20 @@
 #!/usr/bin/env node
-import { getRand, helloGuest } from '../src/cli.js';
+import makeWelcome from '../src/cli.js';
 import checker from '../src/index.js';
+import getRandomInRange from '../src/utils.js';
 
-helloGuest();
+const name = makeWelcome();
 console.log('What number is missing in the progression?');
 checker(
+  name,
   () => {
     const array = [];
-    array[0] = getRand();
-    const plus = getRand();
+    array[0] = getRandomInRange();
+    const plus = getRandomInRange();
     for (let i = 1; i < 10; i += 1) {
       array[i] = array[i - 1] + plus;
     }
-    array[getRand()] = '..';
+    array[getRandomInRange()] = '..';
     const toStr = array.join(' ');
     return toStr.toString();
   },

@@ -1,11 +1,13 @@
 #!/usr/bin/env node
-import { getRand, helloGuest } from '../src/cli.js';
+import makeWelcome from '../src/cli.js';
 import checker from '../src/index.js';
+import getRandomInRange from '../src/utils.js';
 
-helloGuest();
+const name = makeWelcome();
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 checker(
-  () => getRand(),
+  name,
+  () => getRandomInRange(),
   (expression) => {
     const number = expression;
     if (number <= 1) return 'no';

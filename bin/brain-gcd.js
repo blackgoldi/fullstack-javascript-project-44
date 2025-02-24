@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-import { getRand, helloGuest } from '../src/cli.js';
+import makeWelcome from '../src/cli.js';
 import checker from '../src/index.js';
+import getRandomInRange from '../src/utils.js';
 
 function gcd(a, b) {
   if (a === 0) {
@@ -8,12 +9,13 @@ function gcd(a, b) {
   }
   return gcd(b % a, a);
 }
-helloGuest();
+const name = makeWelcome();
 console.log('Find the greatest common divisor of given numbers.');
 checker(
+  name,
   () => {
-    const num1 = getRand() * 10 + getRand();
-    const num2 = getRand() * 10 + getRand();
+    const num1 = getRandomInRange() + getRandomInRange();
+    const num2 = getRandomInRange() + getRandomInRange();
     return `${num1} ${num2}`;
   },
   (expression) => {

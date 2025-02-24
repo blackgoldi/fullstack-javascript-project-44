@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
-import { name } from './cli.js';
 
-function checker(getExpression, getCorrectAnswer) {
+function checker(name, getExpression, getCorrectAnswer) {
   let counter = 0;
   do {
     const expression = getExpression();

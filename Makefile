@@ -3,23 +3,23 @@
 install: 
 	@npm ci
 brain-games: 
-	@node games/brain-games.js
+	@node bin/brain-games.js
 	@node src/cli.js
 brain-even: 
-	@node games/brain-games.js
-	@node games/brain-even.js
+	@node bin/brain-games.js
+	@node bin/brain-even.js
 brain-calc:
-	@node games/brain-games.js
-	@node games/brain-calc.js
+	@node bin/brain-games.js
+	@node bin/brain-calc.js
 brain-gcd:
-	@node games/brain-games.js
-	@node games/brain-gcd.js
+	@node bin/brain-games.js
+	@node bin/brain-gcd.js
 brain-progression:
-	@node games/brain-games.js
-	@node games/brain-progression.js
+	@node bin/brain-games.js
+	@node bin/brain-progression.js
 brain-prime:
-	@node games/brain-games.js
-	@node games/brain-prime.js
+	@node bin/brain-games.js
+	@node bin/brain-prime.js
 publish:
 	@npm publish --dry-run
 lint:

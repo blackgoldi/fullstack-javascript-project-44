@@ -1,13 +1,15 @@
 #!/usr/bin/env node
-import { getRand, helloGuest } from '../src/cli.js';
+import makeWelcome from '../src/cli.js';
+import getRandomInRange from '../src/utils.js';
 import checker from '../src/index.js';
 
-helloGuest();
+const name = makeWelcome();
 console.log('What is the result of the expression?');
 checker(
+  name,
   () => {
-    const num1 = getRand();
-    const num2 = getRand();
+    const num1 = getRandomInRange();
+    const num2 = getRandomInRange();
     const operation = ['+', '-', '*'][Math.floor(Math.random() * 3)];
     return `${num1} ${operation} ${num2}`;
   },
