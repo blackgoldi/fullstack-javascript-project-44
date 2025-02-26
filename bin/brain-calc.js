@@ -1,29 +1,33 @@
 #!/usr/bin/env node
-import makeWelcome from '../src/cli.js';
+import readlineSync from 'readline-sync';
 import getRandomInRange from '../src/utils.js';
-import checker from '../src/index.js';
+import engine from '../src/engine.js';
 
-const name = makeWelcome();
-console.log('What is the result of the expression?');
-checker(
-  name,
+engine(
+  'What is the result of the expression?',
   () => {
     const num1 = getRandomInRange();
     const num2 = getRandomInRange();
     const operation = ['+', '-', '*'][Math.floor(Math.random() * 3)];
-    return `${num1} ${operation} ${num2}`;
-  },
-  (expression) => {
-    const [num1, operation, num2] = expression.split(' ');
+    const expression = (`${num1} ${operation} ${num2}`);
+    let question = 0;
     switch (operation) {
       case '+':
-        return Number(num1) + Number(num2);
+        question = Number(num1) + Number(num2);
+        break;
       case '-':
-        return Number(num1) - Number(num2);
+        question = Number(num1) - Number(num2);
+        break;
       case '*':
-        return Number(num1) * Number(num2);
+        question = Number(num1) * Number(num2);
+        break;
       default:
-        return null;
+        break;
     }
+
+    console.log(`Question: ${expression} `);
+    const answer = readlineSync.question('Your answer: ').toLowerCase();
+
+    return [question, Number(answer)];
   },
 );

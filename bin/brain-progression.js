@@ -1,12 +1,10 @@
 #!/usr/bin/env node
-import makeWelcome from '../src/cli.js';
-import checker from '../src/index.js';
+import readlineSync from 'readline-sync';
+import engine from '../src/engine.js';
 import getRandomInRange from '../src/utils.js';
 
-const name = makeWelcome();
-console.log('What number is missing in the progression?');
-checker(
-  name,
+engine(
+  'What number is missing in the progression?',
   () => {
     const array = [];
     array[0] = getRandomInRange(1, 10);
@@ -16,11 +14,15 @@ checker(
     }
     array[getRandomInRange(5, 10)] = '..';
     const toStr = array.join(' ');
-    return toStr.toString();
-  },
-  (expression) => {
-    const mass = Array.from(expression.split(' '));
+
+    const mass = Array.from(toStr.split(' '));
     const index = mass.findIndex((item) => item === '..');
-    return Number(mass[index - 1]) - Number(mass[index - 2]) + Number(mass[index - 1]);
+    const question = Number(mass[index - 1]) - Number(mass[index - 2]) + Number(mass[index - 1]);
+
+    console.log(question);
+    console.log(`Question: ${toStr.toString()} `);
+    const answer = readlineSync.question('Your answer: ').toLowerCase();
+
+    return [question, Number(answer)];
   },
 );

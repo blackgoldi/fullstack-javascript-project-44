@@ -1,14 +1,18 @@
 #!/usr/bin/env node
-import makeWelcome from '../src/cli.js';
+import readlineSync from 'readline-sync';
 import getRandomInRange from '../src/utils.js';
-import checker from '../src/index.js';
+import engine from '../src/engine.js';
 
 const isEven = (num) => num % 2 === 0;
-const name = makeWelcome();
 
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-checker(
-  name,
-  () => getRandomInRange(),
-  (num) => (isEven(num) ? 'yes' : 'no'),
+engine(
+  'Answer "yes" if the number is even, otherwise answer "no".',
+  () => {
+    const num = getRandomInRange();
+    const question = isEven(num) ? 'yes' : 'no';
+    console.log(`Question: ${num} `);
+    const answer = readlineSync.question('Your answer: ').toLowerCase();
+
+    return [question, answer];
+  },
 );

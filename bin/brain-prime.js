@@ -1,19 +1,25 @@
 #!/usr/bin/env node
-import makeWelcome from '../src/cli.js';
-import checker from '../src/index.js';
+import readlineSync from 'readline-sync';
+import engine from '../src/engine.js';
 import getRandomInRange from '../src/utils.js';
 
-const name = makeWelcome();
-console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-checker(
-  name,
-  () => getRandomInRange(),
-  (expression) => {
-    const number = expression;
-    if (number <= 1) return 'no';
-    for (let i = 2; i <= Math.sqrt(number); i += 1) {
-      if (number % i === 0) return 'no';
+engine(
+  'Answer "yes" if given number is prime. Otherwise answer "no".',
+  () => {
+    const num = getRandomInRange();
+    let question = 'yes';
+    if (num <= 1) {
+      question = 'no';
     }
-    return 'yes';
+    for (let i = 2; i <= Math.sqrt(num); i += 1) {
+      if (num % i === 0) {
+        question = 'no';
+      }
+    }
+    console.log(question);
+    console.log(`Question: ${num} `);
+    const answer = readlineSync.question('Your answer: ').toLowerCase();
+
+    return [question, answer];
   },
 );
