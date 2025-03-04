@@ -6,8 +6,9 @@ function isEven(num) {
 }
 
 const generateRound = () => {
-  const question = `Question: ${getRandomInRange()}`;
-  const answer = isEven(question) ? 'yes' : 'no';
+  const num = getRandomInRange();
+  const question = `Question: ${num}`;
+  const answer = isEven(num) ? 'yes' : 'no';
 
   return [question, answer];
 };

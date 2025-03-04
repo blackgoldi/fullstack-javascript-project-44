@@ -12,7 +12,7 @@ const generateRound = () => {
   const num1 = getRandomInRange() + getRandomInRange();
   const num2 = getRandomInRange() + getRandomInRange();
 
-  const question = `Question: ${num1} ${num2} ${gcd(num1, num2)}`;
+  const question = `Question: ${num1} ${num2}`;
   const answer = gcd(num1, num2);
 
   return [question, String(answer)];
