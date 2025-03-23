@@ -1,19 +1,10 @@
-import getRandomInRange from '../utils.js';
+import getRandomInRange, { isNumPrime } from '../utils.js';
 import mainEngine from '../mainEngine.js';
 
 const generateRound = () => {
   const num = getRandomInRange();
-  let answer = 'yes';
-  if (num <= 1) {
-    answer = 'no';
-  }
-  for (let i = 2; i <= Math.sqrt(num); i += 1) {
-    if (num % i === 0) {
-      answer = 'no';
-    }
-  }
-  const question = `Question: ${num} `;
-
+  const answer = isNumPrime(num) ? 'yes' : 'no';
+  const question = `Question: ${num}`;
   return [question, answer];
 };
 
